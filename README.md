@@ -1,6 +1,6 @@
 ## Architectural Advantages of ClairII over Current LLMs
 
-Current Transformer-based LLMs operate purely on autoregressive next-token prediction using frozen, static weights. ClairII moves away from "guessing the next word" toward a Reasoning Artificial Intelligence model based on continuous latent thought. (RAI)
+Current Transformer-based LLMs operate purely on autoregressive next-token prediction using frozen, static weights. ClairII moves away from "guessing the next word" toward a **Reasoning Artificial Intelligence** model based on continuous latent thought. (RAI)
 
 * **Continuous Ephemeral Learning (Liquid Memory):** Standard LLMs have fixed weights; to learn new facts, they must be mathematically retrained or rely on massive, slow context windows. ClairII uses a secondary `liquid_memory` tensor that mutates *during* the generation process. It alters its own synaptic weights on the fly based on the active conversation, creating true working memory without expanding the context window size.
 * **Dual-Process Cognition:** Humans use System 1 (fast, intuitive) and System 2 (slow, analytical) thinking. ClairII natively replicates this. The `static_weights` handle standard pattern recognition and syntax (System 1), while the dynamically updating `liquid_memory` handles the complex, evolving logic of the specific task (System 2).
@@ -8,6 +8,7 @@ Current Transformer-based LLMs operate purely on autoregressive next-token predi
 * **Pre-Generation Axiomatic Verification:** In current models, safety filters and logical checks happen *after* the text is generated (or via post-training alignment). ClairII passes the pre-linguistic `thought_vector` through the `EDL_Arbiter`. By applying neuro-symbolic `infer| / fall|` rules, it mathematically verifies the logical coherence of the thought *before* converting it into a word. If a hallucination or logic flaw is detected, it triggers a `VETO` and halts the generation tree entirely, eliminating confidently incorrect outputs.
 * **Native Escalation Architecture:** Instead of crashing or hallucinating when confused, the `^>` operator inherently supports agentic structures. If the model falls below its `~ 0.90` confidence threshold, it executes a `TEMPORAL_LOCK`, freezing the state and allowing a supervisor superagent or human developer to inject new context before resuming the computation.
 
+[Sail Language](github.com/zema26/sail-one-language/) 
 
 ```Sail
 module| ClairII_Architecture
