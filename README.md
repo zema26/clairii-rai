@@ -8,7 +8,7 @@ Current Transformer-based LLMs operate purely on autoregressive next-token predi
 * **Pre-Generation Axiomatic Verification:** In current models, safety filters and logical checks happen *after* the text is generated (or via post-training alignment). ClairII passes the pre-linguistic `thought_vector` through the `EDL_Arbiter`. By applying neuro-symbolic `infer| / fall|` rules, it mathematically verifies the logical coherence of the thought *before* converting it into a word. If a hallucination or logic flaw is detected, it triggers a `VETO` and halts the generation tree entirely, eliminating confidently incorrect outputs.
 * **Native Escalation Architecture:** Instead of crashing or hallucinating when confused, the `^>` operator inherently supports agentic structures. If the model falls below its `~ 0.90` confidence threshold, it executes a `TEMPORAL_LOCK`, freezing the state and allowing a supervisor superagent or human developer to inject new context before resuming the computation.
 
-<github.com/zema26/sail-one-language/>
+<https://github.com/zema26/sail-one-language/>
 
 ```Sail
 module| ClairII_Architecture
